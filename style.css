@@ -101,7 +101,7 @@ header {
   font-size: 4rem;
   margin-bottom: 10px;
   -webkit-text-stroke: 2.5px var(--ggp-green);
-  color: var(--ggp-beige); /* keeps fill beige */
+  color: var(--ggp-green-light); /* fill color */
 }
 
 .hero p {
@@ -111,7 +111,7 @@ header {
   margin-bottom: 20px;
   color: var(--ggp-beige);
   -webkit-text-stroke: 1.5px var(--ggp-green);
-  color: var(--ggp-beige); /* keeps fill beige */
+  color: var(--ggp-green-light);
 }
 
 .hero-btn {
@@ -183,6 +183,7 @@ h4,
 h1 {
   font-family: "Spectral SC";
   font-weight: 800;
+  font-size: 2rem;
 }
 
 .detail-page h2 {
@@ -223,7 +224,7 @@ h1 {
   object-fit: cover;
   border-radius: 12px;
   margin-top: 20px;
-  border: 3px solid var(--ggp-green-light);
+  border: 5px solid var(--ggp-green);
 }
 
 #description,
