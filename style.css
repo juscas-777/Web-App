@@ -1,3 +1,6 @@
+/* =========================================================
+   FONT CLASSES
+========================================================= */
 .bebas-neue-regular {
   font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
@@ -16,22 +19,49 @@
   font-style: italic;
 }
 
-h1 {
-  font-family: "Spectral SC";
-  font-weight: 800;
-  font-style: italic;
-  font-size: 2.5rem;
+/* =========================================================
+   GOLDEN GATE PARK COLOR PALETTE
+========================================================= */
+:root {
+  --ggp-green: #2d5a27;
+  --ggp-green-light: #76a86f;
+  --ggp-beige: #f4f1e7;
+  --ggp-mocha: #edcdbb;
+}
+
+/* =========================================================
+   GLOBAL (ALL PAGES)
+========================================================= */
+body {
+  background: var(--ggp-beige);
+  font-family: "Inter", sans-serif;
+  padding: 35px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Playfair Display", serif;
+  color: var(--ggp-green);
 }
 
 p {
-  font-family: "Bebas Neue";
-  font-weight: 400;
-  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: #333;
 }
 
-body {
-  background-color: #004d33;
+/* =========================================================
+   INDEX PAGE
+========================================================= */
+body.index-page {
+  background: var(--ggp-green-light);
+  padding: 0; /* override global padding */
 }
+
+/* ---------- Hero Section ---------- */
 header {
   text-align: center;
   font-weight: 400;
@@ -39,31 +69,49 @@ header {
 }
 
 .hero {
-  height: 100vh; /* Full screen height */
+  height: 100vh;
   background-image: url("https://gggp.org/wp-content/uploads/2023/11/hero_gettinghere.jpg");
-  background-size: cover; /* Make the image cover the whole section */
-  background-position: center; /* Center the image */
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
+
   display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
+  justify-content: center;
+  align-items: center;
+
   text-align: center;
-  padding: 0 20px; /* Mobile friendly padding */
-  color: white; /* Text color */
+  padding: 0 20px;
+  color: white;
 }
 
 .hero-content {
-  max-width: 600px; /* Keeps text readable */
+  max-width: 600px;
+}
+
+.hero-content h1,
+.hero-content p {
+  color: var(--ggp-beige);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.35);
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-family: "Spectral SC";
+  font-style: italic;
+  font-weight: 800;
+  font-size: 4rem;
   margin-bottom: 10px;
+  -webkit-text-stroke: 2.5px var(--ggp-green);
+  color: var(--ggp-beige); /* keeps fill beige */
 }
 
 .hero p {
-  font-size: 1.2rem;
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-size: 2.1rem;
   margin-bottom: 20px;
+  color: var(--ggp-beige);
+  -webkit-text-stroke: 1.5px var(--ggp-green);
+  color: var(--ggp-beige); /* keeps fill beige */
 }
 
 .hero-btn {
@@ -75,6 +123,7 @@ header {
   font-size: 1.1rem;
 }
 
+/* ---------- Index Page Layout ---------- */
 main {
   text-align: center;
   font-family: "Bebas Neue";
@@ -87,16 +136,121 @@ main {
   text-align: center;
   width: 100%;
   max-width: 1440px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   padding: 2em;
-  padding-top: 2em;
-  padding-bottom: 2em;
+}
+
+/* ---------- Index Page Cards ---------- */
+.card {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
 }
 
 .fixed-image {
   width: 100%;
-  height: 200px; /* Adjust as needed */
-  object-fit: cover; /* Ensures images crop nicely */
-  border-radius: 0.5rem 0.5rem 0 0; /* matches bootstrap card */
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.index-page .card-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  color: var(--ggp-green);
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   DETAIL PAGE
+========================================================= */
+
+body.detail-page {
+  background: var(--ggp-green);
+  padding: 35px; /* keeps spacing consistent */
+}
+
+.detail-page h5,
+h4,
+h1 {
+  font-family: "Spectral SC";
+  font-weight: 800;
+}
+
+.detail-page h2 {
+  font-family: "Bebas Neue";
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+}
+.detail-page p {
+  font-family: "Bebas Neue";
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+}
+
+/* Section Box */
+.section-box {
+  background: var(--ggp-mocha);
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border-left: 8px solid var(--ggp-green-light);
+}
+
+/* Rating Badge */
+.rating-badge {
+  background: var(--ggp-green-light);
+  color: var(--ggp-green);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+/* Detail Image */
+#image2 {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-top: 20px;
+  border: 3px solid var(--ggp-green-light);
+}
+
+#description,
+#reviews {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Back Button */
+.back-btn {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  background: var(--ggp-green-light);
+  color: var(--ggp-mocha);
+  text-decoration: none;
+  border-radius: 8px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+
+  transition: background 0.2s ease;
+}
+
+.back-btn:hover {
+  background: var(--ggp-green);
 }
