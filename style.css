@@ -130,22 +130,31 @@ main {
   font-weight: 600;
   font-size: 2.5em;
   background-color: #004d33;
+  padding: 1rem 0;
 }
 
 .container {
+  display: flex;
   text-align: center;
   width: 100%;
   max-width: 1440px;
-  margin: auto;
-  padding: 2em;
+  margin: 1em auto;
+  padding: 0 1em;
+  justify-content: center;
 }
 
+.index-page .row {
+  width: 100%;
+  justify-content: center;
+}
 /* ---------- Index Page Cards ---------- */
 .card {
   border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .card:hover {
