@@ -46,7 +46,7 @@ async function getAllRecords() {
         const poi = fields["POIs"] || "No Title";
         const image1 = fields["Image1"] ? fields["Image1"][0].url : null;
 
-        const detailPageUrl = `/detail.html?id=${record.id}`;
+        const detailPageUrl = `detail.html?id=${record.id}`;
 
         html += `
           <div class="col">
