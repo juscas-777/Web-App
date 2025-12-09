@@ -69,7 +69,8 @@ header {
 }
 
 .hero {
-  height: 100vh;
+  /* height: 100vh; */
+  aspect-ratio: 1440 / 768;
   background-image: url("https://gggp.org/wp-content/uploads/2023/11/hero_gettinghere.jpg");
   background-size: cover;
   background-position: center;
@@ -91,7 +92,9 @@ header {
 .hero-content h1,
 .hero-content p {
   color: var(--ggp-beige);
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.35);
+  text-shadow:
+    2px 2px 6px rgba(0, 0, 0, 0.35),
+    2px 2px 8px rgba(0, 0, 0, 0.75);
 }
 
 .hero h1 {
@@ -99,6 +102,7 @@ header {
   font-style: italic;
   font-weight: 800;
   font-size: 4rem;
+  font-size: clamp(1.5rem, calc(1em + 4vw), 6rem);
   margin-bottom: 10px;
   -webkit-text-stroke: 2.5px var(--ggp-green);
   color: var(--ggp-green-light); /* fill color */
