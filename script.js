@@ -48,7 +48,7 @@ async function getAllRecords() {
         const detailPageUrl = `detail.html?id=${record.id}`;
 
         html += `
-          <div class="col">
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
             <a href="${detailPageUrl}" class="text-decoration-none text-dark">
               <div class="card h-100" style="cursor:pointer;">
                 ${
