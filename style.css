@@ -92,9 +92,7 @@ header {
 .hero-content h1,
 .hero-content p {
   color: var(--ggp-beige);
-  text-shadow:
-    2px 2px 6px rgba(0, 0, 0, 0.35),
-    2px 2px 8px rgba(0, 0, 0, 0.75);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.35), 2px 2px 8px rgba(0, 0, 0, 0.75);
 }
 
 .hero h1 {
@@ -137,7 +135,7 @@ main {
   padding: 1rem 0;
 }
 
-.container {
+.index-page .container {
   display: flex;
   text-align: center;
   width: 100%;
@@ -156,9 +154,7 @@ main {
   border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card:hover {
@@ -196,18 +192,21 @@ h4,
 h1 {
   font-family: "Spectral SC";
   font-weight: 800;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  text-align: center;
 }
 
 .detail-page h2 {
   font-family: "Bebas Neue";
   font-size: 2rem;
   letter-spacing: 0.5px;
+  text-align: center;
 }
 .detail-page p {
   font-family: "Bebas Neue";
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   letter-spacing: 0.5px;
+  text-align: center;
 }
 
 /* Section Box */
@@ -267,4 +266,64 @@ h1 {
 
 .back-btn:hover {
   background: var(--ggp-green);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+.ggp-footer {
+  background: var(--ggp-green-light);
+  color: var(--ggp-beige);
+  padding: 60px 20px;
+  margin-top: 40px;
+  border-top: 10px solid var(--ggp-green);
+}
+
+.footer-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-title {
+  font-family: "Spectral SC";
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 2.8rem;
+
+  /* subtle stroke effect */
+  -webkit-text-stroke: 1px var(--ggp-green);
+  color: var(--ggp-beige);
+  margin-bottom: 10px;
+}
+
+.footer-tagline {
+  font-family: "Bebas Neue";
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+}
+
+.footer-links {
+  margin-bottom: 25px;
+}
+
+.footer-links a {
+  font-family: "Bebas Neue";
+  text-decoration: none;
+  color: var(--ggp-beige);
+  padding: 0 12px;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  transition: 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--ggp-green);
+}
+
+.footer-copy {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  opacity: 0.85;
 }
