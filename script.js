@@ -30,7 +30,6 @@ async function getAllRecords() {
     const response = await fetch(url, options);
     const data = await response.json();
 
-    // Flatten
     const records = data.records.slice(0, 10);
 
     let recordIndex = 0;

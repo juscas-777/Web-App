@@ -1,12 +1,7 @@
 "use strict";
 
-/* ---------------------------
-  Utility: convert Airtable text to <li> list
-  Handles leading commas, newlines, extra spaces.
----------------------------- */
 function convertAirtableList(text) {
   if (!text && text !== "") return ""; // undefined/null guard
-  // normalize to string (in case it's something odd)
   const raw = String(text);
 
   return raw
@@ -18,9 +13,6 @@ function convertAirtableList(text) {
     .join("");
 }
 
-/* ---------------------------
-  Small helper to prevent HTML injection
----------------------------- */
 function escapeHtml(str) {
   return str
     .replaceAll("&", "&amp;")
@@ -29,23 +21,15 @@ function escapeHtml(str) {
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
 }
-
-/* ---------------------------
-  Read record id from URL
----------------------------- */
 const params = new URLSearchParams(window.location.search);
 const recordId = params.get("id");
 
 if (!recordId) {
-  // show basic error if no id provided
   document.body.innerHTML =
     "<p style='padding:20px;color:#fff'>No record id provided in the URL.</p>";
   throw new Error("No record id in URL");
 }
 
-/* ---------------------------
-  Airtable fetch (replace API key)
----------------------------- */
 const url = `https://api.airtable.com/v0/appd2bG7WHqaMZuiX/Table%201/${recordId}`;
 
 async function getDetails() {
@@ -66,20 +50,17 @@ async function getDetails() {
     const data = await res.json();
     const fields = data.fields || {};
 
-    // Simple text fields
     setText("#poi", fields["POIs"] || "Unknown");
     setText("#rating", fields["Rating"] ? `${fields["Rating"]}★` : "—");
     setText("#address", fields["Address"] || "Not available");
     setText("#phone", fields["Phone"] || "Not available");
 
-    // Description & reviews as centered text (use textContent to preserve plain text)
     setText(
       "#description",
       fields["Description"] || "No description available."
     );
     setText("#reviews", fields["Reviews"] || "No reviews available.");
 
-    // Image2
     if (
       fields["Image2"] &&
       Array.isArray(fields["Image2"]) &&
@@ -94,7 +75,6 @@ async function getDetails() {
       if (img) img.style.display = "none";
     }
 
-    // Convert Hours and Prices into <ul>
     const hoursHtml = convertAirtableList(fields["Hours"] || "");
     const pricesHtml = convertAirtableList(fields["Prices"] || "");
 
@@ -115,19 +95,12 @@ async function getDetails() {
   }
 }
 
-/* ---------------------------
-  Helper: set text safely (textContent)
----------------------------- */
 function setText(selector, text) {
   const el = document.querySelector(selector);
   if (!el) return;
-  // If element is intended to hold HTML lists (#hours/#prices), caller sets innerHTML instead.
   el.textContent = text;
 }
 
-/* ---------------------------
-  Show a small error message inside the page
----------------------------- */
 function showFetchError(msg) {
   const container = document.querySelector(".container");
   if (container) {
