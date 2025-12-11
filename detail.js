@@ -69,7 +69,7 @@ async function getDetails() {
     ) {
       const img = document.getElementById("image2");
       img.src = fields["Image2"][0].url;
-      img.style.display = ""; // in case CSS had it hidden earlier
+      img.style.display = ""; 
     } else {
       const img = document.getElementById("image2");
       if (img) img.style.display = "none";
